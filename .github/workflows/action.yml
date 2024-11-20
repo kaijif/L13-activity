@@ -9,7 +9,9 @@ jobs:
 
       - name: Build index.html file
         run: python3 build.py
-
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
       - name: upload built files
         uses: actions/upload-artifact@v3
         with:
