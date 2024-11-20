@@ -2,16 +2,16 @@ on: push
 
 jobs:
   build:
+    runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v4
 
       - name: Build index.html file
-      - run: python3 build.py
+        run: python3 build.py
 
       - name: upload built files
         uses: actions/upload-artifact@v3
         with:
           name: built-files
-        path: out/index.html
-        overwrite: true
+          path: out/index.html
